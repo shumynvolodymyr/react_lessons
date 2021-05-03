@@ -1,6 +1,6 @@
 body {
     background: #fcead8;
-    width: 1280px;
+    width: 1920px;
 }
 
 img {
@@ -11,4 +11,6 @@ div {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
+

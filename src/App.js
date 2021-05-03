@@ -1,5 +1,6 @@
 import './App.css';
 import CharacterComponent from "./character/characterComponent";
+// import './character/characterComponent.css'
 
 function App() {
     return (
