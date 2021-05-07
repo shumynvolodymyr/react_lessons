@@ -1,44 +1,59 @@
 import './App.css';
-import User from "./components/user";
+import User from "./components/user/User";
+import {useState} from "react";
+
+const users = [
+    {name: 'vasya', age: 31, isMarried: false},
+    {name: 'petya', age: 30, isMarried: true},
+    {name: 'kolya', age: 29, isMarried: true},
+    {name: 'olya', age: 28, isMarried: false},
+    {name: 'max', age: 30, isMarried: true},
+    {name: 'anya', age: 31, isMarried: false},
+    {name: 'oleg', age: 28, isMarried: false},
+    {name: 'andrey', age: 29, isMarried: true},
+    {name: 'masha', age: 30, isMarried: true},
+    {name: 'olya', age: 31, isMarried: false},
+    {name: 'max', age: 31, isMarried: true}
+];
 
 function App() {
+   let [counter, setCounter] = useState(0);
+    let [usersArray,setUsers] =useState(users);
+
+    const increment = () => setCounter(++counter);
+    const minus = () => setCounter(counter-1);
+
+
+
+    const deleteUser =()=> {
+        usersArray.pop();
+        setUsers([...usersArray]);
+    }
+
     return (
         <div>
-            <User
-                name={'vasya'}
-                age={31}
-                isMarried={false}
-            />
-            <User
-                name={'petya'}
-                age={30}
-                isMarried={true}
-            />
-            <User
-                name={'kolya'}
-                age={29}
-                isMarried={false}
-            />
-            <User
-                name={'taras'}
-                age={18}
-                isMarried={true}
-            />
-            <User
-                name={'ivan'}
-                age={21}
-                isMarried={false}
-            />
-            <User
-                name={'artem'}
-                age={24}
-                isMarried={true}
-            />
+            <div>
 
+<button onClick={increment}>+</button>
+<button onClick={minus}>-</button>  {counter}
 
+            </div>
+            <div>
+                {
+                    usersArray.map((user, index) =>
+                        <User key={index}
+                              {...user}
+                        />
+                    )
+
+                }
+                <button onClick={deleteUser}>Delete</button>
+            </div>
         </div>
-    );
+
+    )
 }
+
 
 export default App;
 
