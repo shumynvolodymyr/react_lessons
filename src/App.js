@@ -22,6 +22,7 @@ function App() {
 
     const increment = () => setCounter(++counter);
     const minus = () => setCounter(counter-1);
+    const reset = () => setCounter(0);
 
 
 
@@ -35,7 +36,8 @@ function App() {
             <div>
 
 <button onClick={increment}>+</button>
-<button onClick={minus}>-</button>  {counter}
+<button onClick={minus}>-</button>
+                <button onClick={reset}>reset</button>{counter}
 
             </div>
             <div>
