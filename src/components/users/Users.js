@@ -1,15 +1,17 @@
 import {useEffect, useState} from "react";
 import User from "../user/User";
 import "./Users.css";
-import axiosInstance from "../../services/api";
+import {getUsers} from "../../services/api";
 
 export default function Users() {
 
     let [users, setUsers] = useState([]);
     let [singleUser, setSingleUser] =useState(null);
 
-    useEffect(() => {
-axiosInstance.get('/users').then(value => setUsers([...value.data]));
+    useEffect(async () => {
+let users = await getUsers();
+setUsers([...users])
+
     }, [])
 
     const search = (id) => {
