@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import User from "../user/User";
-import "./Users.css"
+import "./Users.css";
+import axiosInstance from "../../services/api";
 
 export default function Users() {
 
@@ -8,11 +9,7 @@ export default function Users() {
     let [singleUser, setSingleUser] =useState(null);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(value => {
-                setUsers([...value]);
-            });
+axiosInstance.get('/users').then(value => setUsers([...value.data]));
     }, [])
 
     const search = (id) => {
