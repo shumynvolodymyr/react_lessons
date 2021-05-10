@@ -1,0 +1,9 @@
+.commentBox {
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    background: #68e01e;
+    box-shadow: 0 0 2px crimson;
+    border-radius: 10px;
+}

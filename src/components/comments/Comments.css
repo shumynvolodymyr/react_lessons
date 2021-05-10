@@ -1,0 +1,21 @@
+.wrapComments {
+    display: flex;
+    column-gap: 15px;
+    padding: 15px;
+}
+.commentsBox {
+    background: antiquewhite;
+    border: 1px solid crimson;
+    width: 600px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #cf0be5;
+}
+
+.rightComments {
+    background: linen;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #11cbee;
+    width: 400px;
+    height: fit-content;
+}

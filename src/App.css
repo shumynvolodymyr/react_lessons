@@ -1,1 +1,24 @@
+.navBar {
+    display: flex;
+ justify-content: space-around;
+    align-items: center;
+    background: moccasin;
+    width: 640px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px crimson;
+}
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    color: crimson;
+}
+
+button:hover {
+    background: crimson;
+}
+
 
