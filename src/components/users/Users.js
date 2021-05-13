@@ -4,7 +4,9 @@ import "./Users.css";
 import {getUsers} from '../../services/API'
 
 
-export default function Users({match: {url}}) {
+export default function Users(props) {
+
+    let{match:{url}} = props;
 
     let [users, setUsers] = useState([]);
 

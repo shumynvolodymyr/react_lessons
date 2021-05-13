@@ -18,4 +18,6 @@
     box-shadow: 0 0 10px #11cbee;
     width: 400px;
     height: fit-content;
+    margin: 20px;
+    padding: 10px;
 }

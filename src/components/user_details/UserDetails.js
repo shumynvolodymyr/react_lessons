@@ -1,12 +1,16 @@
 import {useEffect, useState} from "react";
 
 export default function UserDetails(props) {
+
     // console.log(props);
+
     let {match: {params: {id}}, location:{state}} = props;
     let [user, setUser] = useState(null);
+
     useEffect(()=>{
         setUser(state)
     },[id])
+
     return (
 
         <div className={'rightColumn'}>

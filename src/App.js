@@ -9,6 +9,7 @@ import {
     Link
 } from "react-router-dom";
 import UserDetails from "./components/user_details/UserDetails";
+import PostDetails from "./components/post_details/PostDetails";
 
 
 function App() {
@@ -19,11 +20,11 @@ function App() {
 
                 <div className={'navBar'}>
 
-                    <Link to={'/users'} className={"link"}>To users</Link>
+                    <Link to={'/users'} className={"link"}><b>TO USERS</b></Link>
 
-                    <Link to={'/posts'} className={"link"}>To posts</Link>
+                    <Link to={'/posts'} className={"link"}><b>TO POSTS</b></Link>
 
-                    <Link to={'/comments'} className={"link"}>To comments</Link>
+                    <Link to={'/comments'} className={"link"}><b>TO COMMENTS</b></Link>
                 </div>
 
                 <Switch>
@@ -39,6 +40,7 @@ function App() {
                     }}/>
 
                     <Route path={'/users/:id'} component={UserDetails}/>
+                    <Route path={'/posts/:id'} component={PostDetails}/>
 
                 </Switch>
             </Router>

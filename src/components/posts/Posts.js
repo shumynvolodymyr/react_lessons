@@ -3,19 +3,15 @@ import {getPosts} from "../../services/API";
 import Post from "../post/Post";
 import "./Posts.css"
 
-export default function Posts() {
+export default function Posts(props) {
+
+   let{match:{url}} = props;
 
     let [posts, setPosts] = useState([]);
-    let [singlePost, setSinglePost] = useState(null);
 
     useEffect(() => {
         getPosts().then(value => setPosts(value.data));
     }, [])
-
-    const search = (id) => {
-        let find = posts.find(value => value.id === id);
-        setSinglePost(find);
-    }
 
     return (
 
@@ -25,17 +21,10 @@ export default function Posts() {
                     posts.map((value) => <Post
                         key={value.id}
                         item={value}
-                        search={search}
+                        url={url}
                     />)
                 }
             </div>
-
-            <div className={'rightColumnPost'}>
-                {
-                    singlePost && <p><b>Body:</b> {singlePost.body} </p>
-                }
-            </div>
-
         </div>
     );
 }
