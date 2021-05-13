@@ -1,14 +1,19 @@
 import "./Comment.css"
-export default function Comment({item, search}) {
+import {
+    Link
+} from "react-router-dom";
+
+export default function Comment({item, search, url}) {
+
+    let path = url + "/" + item.id;
+
     return (
         <div className={'commentBox'}>
-            <div>
-                {item.id}.
-                {item.name}
-            </div>
-            <div className={'button'}>
-                <button onClick={()=>search(item.id)}>	&#9997;</button>
-            </div>
+            <Link className={'characters'} to={{pathname: path, state: item}}>
+                {item.id}. {item.name}
+            </Link>
+
+            <button onClick={() => search(item.id)}>    &#9997;</button>
 
         </div>
     );

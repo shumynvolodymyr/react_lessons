@@ -9,14 +9,9 @@ export default function User({item, url}) {
 
     return (
         <div className={'userBox'}>
-
-            <div>
-                <Link className={'characters'} to={{pathname: path, state: item}}>
-                    {item.id}. {item.name}
-                </Link>
-
-            </div>
-
+            <Link className={'characters'} to={{pathname: path, state: item}}>
+                  {item.id}. {item.name}
+            </Link>
         </div>
     );
 }

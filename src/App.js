@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import UserDetails from "./components/user_details/UserDetails";
 import PostDetails from "./components/post_details/PostDetails";
+import CommentDetails from "./components/comment_details/CommentDetails";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
                     <Route path={'/users/:id'} component={UserDetails}/>
                     <Route path={'/posts/:id'} component={PostDetails}/>
+                    <Route path={'/comments/:id'} component={CommentDetails}/>
 
                 </Switch>
             </Router>

@@ -10,14 +10,11 @@ export default function Post({item, url}) {
     return (
         <div className={'postBox'}>
 
-            <div>
-                {item.id}. {item.title}
-            </div>
-            <div className={'button'}>
-                <Link to={{pathname: path, state: item}}>
-<button>Details</button>
-                </Link>
-            </div>
+            {item.id}. {item.title}
+
+            <Link to={{pathname: path, state: item}}>
+                <button> Details </button>
+            </Link>
         </div>
     );
 }

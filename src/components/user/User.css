@@ -3,16 +3,12 @@
     justify-content: space-between;
 }
 
-button {
-    background: #68e01e;
-    box-shadow: 0 0 2px crimson;
-    border-radius: 10px;
-}
-.characters {
-    text-decoration: none;
-    color: black;
-}
 .userBox:hover {
     background: rgba(213, 141, 63, 0.75);
     border-radius: 5px;
+}
+
+.characters {
+    text-decoration: none;
+    color: black;
 }

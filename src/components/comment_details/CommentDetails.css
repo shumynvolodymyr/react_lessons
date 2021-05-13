@@ -1,0 +1,14 @@
+.commentDetails {
+    background: linen;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #11cbee;
+    width: 600px;
+    height: fit-content;
+    padding: 10px;
+    margin: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted black;
+}

@@ -3,7 +3,8 @@ import Comment from "../comment/Comment";
 import "./Comments.css"
 import {getComments} from "../../services/API"
 
-export default function Comments() {
+export default function Comments(props) {
+    let {match:{url}} =props;
 
     let [comments, setComments] = useState([]);
     let [singleComments, setSingleComments] = useState(null);
@@ -26,6 +27,7 @@ export default function Comments() {
                         key={value.id}
                         item={value}
                         search={search}
+                        url={url}
                     />)
                 }
             </div>
