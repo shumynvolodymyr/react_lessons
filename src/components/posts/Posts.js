@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import axiosInstance from "../../services/API";
+import {getPosts} from "../../services/API";
 import Post from "../post/Post";
 import "./Posts.css"
 
@@ -9,7 +9,7 @@ export default function Posts() {
     let [singlePost, setSinglePost] = useState(null);
 
     useEffect(() => {
-        axiosInstance.get('/posts').then(value => setPosts(value.data));
+        getPosts().then(value => setPosts(value.data));
     }, [])
 
     const search = (id) => {

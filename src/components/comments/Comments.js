@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Comment from "../comment/Comment";
 import "./Comments.css"
-import axiosInstance from "../../services/API"
+import {getComments} from "../../services/API"
 
 export default function Comments() {
 
@@ -9,7 +9,7 @@ export default function Comments() {
     let [singleComments, setSingleComments] = useState(null);
 
     useEffect(() => {
-        axiosInstance.get('/comments').then(value => setComments(value.data));
+        getComments().then(value => setComments(value.data));
     }, [])
 
     const search = (id) => {

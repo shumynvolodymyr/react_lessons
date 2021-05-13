@@ -1,17 +1,21 @@
 import "./User.css"
-export default function User({item, search}) {
+import {
+    Link
+} from "react-router-dom";
+
+export default function User({item, url}) {
+
+    let path = url +"/"+ item.id;
+
     return (
         <div className={'userBox'}>
 
-            <div className={'characters'}>
-                {item.id}.
-                {item.name}
-            </div>
+            <div>
+                <Link className={'characters'} to={{pathname: path, state: item}}>
+                    {item.id}. {item.name}
+                </Link>
 
-            <div className={'button'}>
-                <button onClick={() => search(item.id)}>INFO</button>
             </div>
-
 
         </div>
     );

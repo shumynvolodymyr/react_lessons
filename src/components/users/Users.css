@@ -1,7 +1,8 @@
 .wrapper {
     display: flex;
     column-gap: 15px;
-    padding: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 .usersBox {
     background: antiquewhite;
@@ -18,4 +19,6 @@
     box-shadow: 0 0 10px #11cbee;
     width: fit-content;
     height: fit-content;
+    margin: 20px;
+    padding: 10px;
 }

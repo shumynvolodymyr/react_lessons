@@ -8,6 +8,8 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import UserDetails from "./components/user_details/UserDetails";
+
 
 function App() {
     return (
@@ -26,9 +28,17 @@ function App() {
 
                 <Switch>
 
-                    <Route path={'/users'} render={() => (<Users/>)}/>
-                    <Route path={'/posts'} render={() => (<Posts/>)}/>
-                    <Route path={'/comments'} render={() => (<Comments/>)}/>
+                    <Route exact path={'/users'} render={(props) => {
+                        return <Users {...props}/>
+                    }}/>
+                    <Route exact path={'/posts'} render={(props) => {
+                        return <Posts {...props}/>
+                    }}/>
+                    <Route exact path={'/comments'} render={(props) => {
+                        return <Comments {...props}/>
+                    }}/>
+
+                    <Route path={'/users/:id'} component={UserDetails}/>
 
                 </Switch>
             </Router>
